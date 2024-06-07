@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Banker's Algorithm - Safety Checker</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h1>Banker's Algorithm - Safety Checker</h1>
+
+    <h2>Available Resources</h2>
+    <label for="resourceA">Resource A:</label>
+    <input type="number" id="resourceA" min="0" value="10">
+    <br>
+    <label for="resourceB">Resource B:</label>
+    <input type="number" id="resourceB" min="0" value="5">
+    <br>
+    <label for="resourceC">Resource C:</label>
+    <input type="number" id="resourceC" min="0" value="7">
+    <br>
+
+    <h2>Process Allocation and Maximum</h2>
+    <table>
+        <tr>
+            <th>Process</th>
+            <th>Allocation</th>
+            <th>Maximum</th>
+            <th>Need</th>
+        </tr>
+        <tr>
+            <td>P0</td>
+            <td>
+                <input type="number" id="p0a-allocated" min="0" value="0">
+                <input type="number" id="p0b-allocated" min="0" value="1">
+                <input type="number" id="p0c-allocated" min="0" value="0">
+            </td>
+            <td>
+                <input type="number" id="p0a-max" min="0" value="0">
+                <input type="number" id="p0b-max" min="0" value="1">
+                <input type="number" id="p0c-max" min="0" value="0">
+            </td>
+            <td>
+                <span id="p0a-need"></span>
+                <span id="p0b-need"></span>
+                <span id="p0c-need"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>P1</td>
+            <td>
+                <input type="number" id="p1a-allocated" min="0" value="2">
+                <input type="number" id="p1b-allocated" min="0" value="0">
+                <input type="number" id="p1c-allocated" min="0" value="0">
+            </td>
+            <td>
+                <input type="number" id="p1a-max" min="0" value="2">
+                <input type="number" id="p1b-max" min="0" value="2">
+                <input type="number" id="p1c-max" min="0" value="3">
+            </td>
+            <td>
+                <span id="p1a-need"></span>
+                <span id="p1b-need"></span>
+                <span id="p1c-need"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>P2</td>
+            <td>
+                <input type="number" id="p2a-allocated" min="0" value="3">
+                <input type="number" id="p2b-allocated" min="0" value="0">
+                <input type="number" id="p2c-allocated" min="0" value="2">
+            </td>
+            <td>
+                <input type="number" id="p2a-max" min="0" value="5">
+                <input type="number" id="p2b-max" min="0" value="2">
+                <input type="number" id="p2c-max" min="0" value="2">
+            </td>
+            <td>
+                <span id="p2a-need"></span>
+                <span id="p2b-need"></span>
+                <span id="p2c-need"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>P3</td>
+            <td>
+                <input type="number" id="p3a-allocated" min="0" value="2">
+                <input type="number" id="p3b-allocated" min="0" value="1">
+                <input type="number" id="p3c-allocated" min="0" value="1">
+            </td>
+            <td>
+                <input type="number" id="p3a-max" min="0" value="1">
+                <input type="number" id="p3b-max" min="0" value="3">
+                <input type="number" id="p3c-max" min="0" value="2">
+            </td>
+            <td>
+                <span id="p3a-need"></span>
+                <span id="p3b-need"></span>
+                <span id="p3c-need"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>P4</td>
+            <td>
+                <input type="number" id="p4a-allocated" min="0" value="0">
+                <input type="number" id="p4b-allocated" min="0" value="0">
+                <input type="number" id="p4c-allocated" min="0" value="2">
+            </td>
+            <td>
+                <input type="number" id="p4a-max" min="0" value="0">
+                <input type="number" id="p4b-max" min="0" value="2">
+                <input type="number" id="p4c-max" min="0" value="2">
+            </td>
+            <td>
+                <span id="p4a-need"></span>
+                <span id="p4b-need"></span>
+                <span id="p4c-need"></span>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Resource Request Sequence</h2>
+    <input type="text" id="sequenceInput">
+    <button onclick="checkSafety()">Check Safety</button>
+
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
